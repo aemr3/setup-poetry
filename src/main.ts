@@ -56,7 +56,7 @@ async function run() {
           core.info("Using cached dependencies")
         } else {
           core.info("Installing dependencies...")
-          await exec("poetry", ["install", "-n", "-q"])
+          await exec("poetry", ["install", "-n"])
           if (cacheDependencies) await saveCacheWithoutErrors(depsCachePaths, depsCacheKey)
         }
       })
